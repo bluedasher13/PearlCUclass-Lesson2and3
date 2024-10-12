@@ -6,7 +6,7 @@ import re
 separator = os.sep
 
 # 設定存放檔案的資料夾路徑
-folder_path = 'C:\\Users\\user\\Desktop\\PearlCUclass\\Lesson2and3\\Lesson2and3\\images'
+folder_path = r'C:\Users\user\Desktop\PearlCUclass\Lesson2and3\Lesson2and3\images'
 
 # 列出資料夾中的檔案並進行批次處理
 for filename in os.listdir(folder_path):
@@ -21,7 +21,7 @@ for filename in os.listdir(folder_path):
         # 從匹配中取出需要的部分，並加上前綴字串 "rename_"
         new_filename = "rename_" + match.group(1)
         # 使用 os.rename() 函式進行檔案重新命名
-        os.rename(f"{folder_path}{separator}{filename}", f"{folder_path}{separator}{new_filename}")
+        os.rename(rf"{folder_path}{separator}{filename}", f"{folder_path}{separator}{new_filename}")
 
 # 批次處理完成
 print("批次處理已完成。")
